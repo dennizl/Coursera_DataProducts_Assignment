@@ -36,7 +36,8 @@ The World Urbanization Dashboard helps translate an authoritative United Nations
 
 --- .class #id
 ## About the Data: Coverage (Slide 5 - from R Code)
-```{r}
+
+```r
 data <- read.csv("un_worldurbanpop_regions_v2.csv", header=TRUE)[,1:2]
 regions <- unique(as.character(data$Region)); toPrint <- ""
 for(i in 1:length(regions)) {
@@ -44,4 +45,14 @@ for(i in 1:length(regions)) {
   toPrint <- paste(c(toPrint, regions[i],": ", subregions,"\n"), collapse="")  
 }
 cat(gsub("All Subregions, ", "",toPrint))
+```
+
+```
+## World: More developed countries, Less developed countries (excl. least), Least developed countries
+## Africa: Eastern Africa, Middle Africa, Northern Africa, Southern Africa, Western Africa
+## Asia: Eastern Asia, South-Central Asia, Central Asia, Southern Asia, South-Eastern Asia, Western Asia
+## Europe: Eastern Europe, Northern Europe, Southern Europe, Western Europe
+## Latin America and the Caribbean: Caribbean, Central America, South America
+## Northern America: Canada, Other, United States of America
+## Oceania: Australia/New Zealand, Melanesia, Micronesia, Polynesia
 ```
